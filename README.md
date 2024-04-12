@@ -67,6 +67,11 @@ Zip the ***MainDataset*** folder and proceed to upload the ***MainDataset.zip***
 
 Open ***Google Colab*** in your browser and proceed to login to the same account where you uploaded the zip file to. Upload and open the ***yolov8_helmet_noHelmet.ipyny*** in ***Google Colab***. Execute each cell in that sequence itself.
 
+```
+%cd {HOME}
+!yolo task=detect mode=predict model=yolov8n.pt conf=0.25 source='https://media.roboflow.com/notebooks/examples/dog.jpeg' show=True
+```
+This cell of code is just to test the Pre-Trained ***yolov8n.pt*** model that is provided by Ultralytics. The last cell is where we train our own model with the dataset that we prepared.
 
 
 
