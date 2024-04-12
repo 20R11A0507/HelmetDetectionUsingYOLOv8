@@ -1,5 +1,5 @@
 from ultralytics import YOLO
 
-model=YOLO('bestNew.pt')
+model=YOLO('best.pt')
 source = '2wheelerTrafficWOHelmet.webm'
 results = model(source, show=True)
