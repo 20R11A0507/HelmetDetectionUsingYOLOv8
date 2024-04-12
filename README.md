@@ -65,13 +65,23 @@ names: ['helmet', 'noHelmet']
 ```
 Zip the ***MainDataset*** folder and proceed to upload the ***MainDataset.zip*** to your ***Google Drive***.
 
-Open ***Google Colab*** in your browser and proceed to login to the same account where you uploaded the zip file to. Upload and open the ***yolov8_helmet_noHelmet.ipyny*** in ***Google Colab***. Execute each cell in that sequence itself.
+Open ***Google Colab*** in your browser and proceed to login to the same account where you uploaded the zip file to. Upload and open the ***yolov8_helmet_noHelmet.ipyny*** in ***Google Colab***. Connect to the GPU provided by ***Google Colab*** and execute all the cells in that sequence itself.
 
 ```
 %cd {HOME}
 !yolo task=detect mode=predict model=yolov8n.pt conf=0.25 source='https://media.roboflow.com/notebooks/examples/dog.jpeg' show=True
 ```
-This cell of code is just to test the Pre-Trained ***yolov8n.pt*** model that is provided by Ultralytics. The last cell is where we train our own model with the dataset that we prepared.
+This cell of code is just to test the Pre-Trained ***yolov8n.pt*** model that is provided by Ultralytics.
 
+The last cell is where we train our own model with the dataset that we prepared.
 
+```
+%cd {HOME}
+!yolo task=detect mode=train model=yolov8s.pt data='/content/datasets/MajorProjectNew/data.yaml' epochs=100 imgsz=800 plots=True
+```
+Once the training is complete a ***best.pt*** file is generated and saved in the temporary environment that is provided by ***Google Colab***. Download the ***best.pt*** file to your computer and save it to your main folder of the project.
+
+### Your Custom Trained Model is READY!
+## To predict from our Custom Trained Model
+Executing the ***driver.py*** program, given that the folder that it is contained in also contains the test video and our custom trained ***best.pt*** model, you can predict ***helmet and noHelmet*** for any given video.
 
