@@ -84,6 +84,9 @@ Once the training is complete a ***best.pt*** file is generated and saved in the
 
 ### Your Custom Trained Model is READY!
 ## To predict from our Custom Trained Model
+>[!IMPORTANT]
+>Make sure to change the ***Python Version to 3.12***
+
 Executing the ***driver.py*** program, given that the folder that it is contained in also contains the test video and our custom trained ***best.pt*** model, you can predict ***helmet and noHelmet*** for any given video.
 
 ``` python
