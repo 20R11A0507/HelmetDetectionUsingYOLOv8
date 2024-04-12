@@ -36,7 +36,8 @@ Click on ***Create RectBox*** and using the cursor select around the area contai
 **Here is an example:**
 ![LabelImg ScreenShot](/ScreenShot1.jpg)
 
-Make sure to save the progress and move further to the next image.
+>[!IMPORTANT]
+>Make sure to save the progress for each image and then move to the next image.
 
 After the completion of all the ***N*** images, close ***LabelImg***. You can notice that in the folder where your images were saved ***N*** text files and a ***Classes.txt*** file is created. The ***Classes.txt*** file contains the names of the classes (i.e helmet and noHelmet). In those other text files the coordinates of each ***RectBox*** are saved respective of the Index Number of the Classes (0 and 1). In our case 0 represents ***helmet*** and 1 represents ***noHelmet***.
 
@@ -85,3 +86,12 @@ Once the training is complete a ***best.pt*** file is generated and saved in the
 ## To predict from our Custom Trained Model
 Executing the ***driver.py*** program, given that the folder that it is contained in also contains the test video and our custom trained ***best.pt*** model, you can predict ***helmet and noHelmet*** for any given video.
 
+``` python
+from ultralytics import YOLO
+
+model=YOLO('best.pt')
+source = '2wheelerTrafficWOHelmet.webm'
+results = model(source, show=True)
+```
+# Acknowledgments
+This project was built by referencing this [YouTube video](https://www.youtube.com/watch?v=ARHjcG509jo&t=416s). But the main drawback that I personally found in this implementation is that the project only detects helmets rather than detecting helmet and noHelmet. My project is can be called a further implementation of that project.
