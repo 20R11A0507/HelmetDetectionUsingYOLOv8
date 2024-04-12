@@ -53,6 +53,20 @@ Create a new folder naming it accordingly, lets assume that the name is "***Main
 
 The training and validation in both images and labels should contain all the contents of the folder containing the images that we labeled (these include ***Classes.txt***, ***helmet images*** and ***helmet labels***). Paste the ***data.yaml*** file in the ***MainDataset*** folder and make sure that the path mentioned for training and validation in the ***data.yaml*** file contains the correct path.
 
+``` python
+train: ../MainDataset/images/training
+val: ../MainDataset/labels/validation
+
+#no of classes
+nc: 2
+
+#names of the classes
+names: ['helmet', 'noHelmet']
 ```
+Zip the ***MainDataset*** folder and proceed to upload the ***MainDataset.zip*** to your ***Google Drive***.
+
+Open ***Google Colab*** in your browser and proceed to login to the same account where you uploaded the zip file to. Upload and open the ***yolov8_helmet_noHelmet.ipyny*** in ***Google Colab***. Execute each cell in that sequence itself.
+
+
 
 
