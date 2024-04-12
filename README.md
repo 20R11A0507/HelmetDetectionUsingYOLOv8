@@ -93,5 +93,10 @@ model=YOLO('best.pt')
 source = '2wheelerTrafficWOHelmet.webm'
 results = model(source, show=True)
 ```
+
+Prediction Video:
+
+https://github.com/20R11A0507/HelmetDetectionUsingYOLOv8/assets/143257388/84c72016-4b3f-4dda-b64d-9a5d73882c7b
+
 # Acknowledgments
 This project was built by referencing this [YouTube video](https://www.youtube.com/watch?v=ARHjcG509jo&t=416s). But the main drawback that I personally found in this implementation is that the project only detects helmets rather than detecting helmet and noHelmet. My project is can be called a further implementation of that project.
