@@ -1,2 +1,8 @@
+train: ../MainDataset/images/training
+val: ../MainDataset/labels/validation
+
+#no of classes
 nc: 2
+
+#names of the classes
 names: ['helmet', 'noHelmet']
